@@ -67,9 +67,20 @@ while True:
     elif (("show" in a or "display" in a or "open" in a) and ("computer specific properties" in a or "computer specific configuration" in a)):
         p.speak("Displaying your System Configurations")
         os.system("systeminfo")
+    elif "youtube" in a:
+
+        p.speak("What are you looking for?")
+        print("What are you looking for?")
+        q=input()
+        q=q.lower()
+        p.speak("Okay! opening {} in YouTube".format(q))
+        try:
+            os.system("chrome https://www.youtube.com/results?search_query={}".format(q))
+        except:
+            print("Error...try again")
 
     #exit
-    elif ("close" in a or "exit" in a):
+elif ("close" in a or "exit" in a or 'bye' in a):
         p.speak("Bye..we are closing now. Happy to help you")
         exit()
     else:
