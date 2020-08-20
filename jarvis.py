@@ -80,7 +80,7 @@ while True:
             print("Error...try again")
 
     #exit
-elif ("close" in a or "exit" in a or 'bye' in a):
+    elif ("close" in a or "exit" in a or "bye" in a):
         p.speak("Bye..we are closing now. Happy to help you")
         exit()
     else:
