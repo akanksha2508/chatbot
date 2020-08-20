@@ -1,58 +1,73 @@
 import os
 import pyttsx3 as  p
 
-p.speak("Welcome , how may I help you ")
-a=input("Welcome , how may I help you ?")
-a=a.lower()
-b=("open" in a or "execute" in a or "run" in a or "launch" in a or "start" in a)
+p.speak("Welcome , tell me your name")
+d=input()
+p.speak("Welcome"+d)
+
 while True:
+    p.speak("How may I help you ?")
+    a=input("How may I help you ?")
+    a=a.lower()
+    b=("open" in a or "execute" in a or "run" in a or "launch" in a or "start" in a)
     #browser
     if (b) and ("chrome" in a or "web browser" in a or "browser" in a or "google" in a):
-        os.system("chrome")
         p.speak("Opening chrome")
+        os.system("chrome")
+
     #editor
     elif (b) and ("editor" in a or "notepad" in a or "atom" in a):
         if ("notepad" in a):
-            os.system("notepad")
             p.speak("Launching notepad")
+            os.system("notepad")
+
         else:
-            os.system("start atom")
             p.speak("Launching atom")
+            os.system("start atom")
+
 
     #windows player
     elif (b) and ("media player" in a or "windows media player" in a):
-        os.system("wmplayer")
         p.speak("Launching Windows Media Player")
+        os.system("wmplayer")
+
     #anydesk
     elif (b) and ("anydesk" in a ):
-        os.system("anydesk")
         p.speak("Launching AnyDesk")
+        os.system("anydesk")
+
     #juypter notebook
     elif (b) and ("jupyter" in a or "jupyter notebook" in a):
-        os.system("start jupyter notebook")
         p.speak("Launching jupyter Notebook")
+        os.system("start jupyter notebook")
+
     #vlc
     elif((b) and ("vlc" in a)):
-        os.system("vlc")
         p.speak("starting a vlc")
+        os.system("vlc")
+
     #calculator
     elif (b) and ("calculator" in a or "cal" in a or "calci" in a):
-        os.system("calc")
         p.speak("Opening Calculator")
+        os.system("calc")
+
     #vm
     elif (b) and ("vm" in a or "virtual machine" in a):
         p.speak("Tell machine name")
         c=input("VM Name")
-        os.system("virtualboxvm --startvm "+ c)
         p.speak("Launching virtual machine")
+        os.system("virtualboxvm --startvm "+ c)
+
     #androidstudio
     elif (b) and ("android studio" in a):
-        os.system("studio64.exe")
         p.speak("Launching Android Studio")
+        os.system("studio64.exe")
+
     #system configuration
     elif (("show" in a or "display" in a or "open" in a) and ("computer specific properties" in a or "computer specific configuration" in a)):
-        os.system("systeminfo")
         p.speak("Displaying your System Configurations")
+        os.system("systeminfo")
+
     #exit
     elif ("close" in a or "exit" in a):
         p.speak("Bye..we are closing now. Happy to help you")
